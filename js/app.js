@@ -29,12 +29,12 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 var Player = function() {
     this.sprite = 'images/char-pink-girl.png';
-    this.x = 100;
-    this.y = 500;
+    this.x = 0;
+    this.y = 400;
 }
 
 Player.prototype.render = function() {
-    ctx.drawImage(Resourses.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
 Player.prototype.update = function() {
@@ -45,7 +45,7 @@ Player.prototype.update = function() {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-let player = new Player();
+const player = new Player();
 const allEnemies = [];
 const enemy1 = new Enemy(0, 60, 100);
 allEnemies.push(enemy1);
