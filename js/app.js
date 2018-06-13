@@ -44,11 +44,28 @@ Player.prototype.render = function() {
 }
 
 Player.prototype.update = function() {
-    // x = (this.x + stepX);
-    // y = (this.y + stepY);
+    this.x = this.x;
+    this.y = this.y;
 }
 
-//random functions for Enemies: random Y position (3 possibilities) and random speed (between 101 and 200), random start on the screen
+Player.prototype.handleInput = function(move) {
+    switch (move) {
+      case 'left':
+        this.x = (this.x - 101);
+        break;
+      case 'up':
+        this.y = (this.y - 85);
+        break;
+      case 'right':
+        this.x = (this.x + 101);
+        break;
+      case 'down':
+        this.y = (this.y + 85);
+        break;
+    }
+}
+
+//random functions for Enemies: random Y position (3 possibilities) and random speed (between 101 and 200), random start from the left
 function randomEnemyY() {
     let randomY = Math.floor((Math.random() * 3) + 1);
     return (60 + 85 * (randomY - 1));
