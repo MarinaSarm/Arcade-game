@@ -26,6 +26,8 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 var Player = function() {
     this.sprite = 'images/char-pink-girl.png';
+    this.x = 100;
+    this.y = 500;
 }
 
 Player.prototype.render = function() {
