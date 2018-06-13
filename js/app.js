@@ -48,10 +48,15 @@ Player.prototype.update = function() {
     // y = (this.y + stepY);
 }
 
-//random function for Enemies
+//random functions for Enemies: random Y position (3 possibilities) and random speed (between 101 and 150)
 function randomEnemyY() {
-    let randomNum = Math.floor((Math.random() * 3) + 1);
-    return (60 + 85 * (randomNum - 1));
+    let randomY = Math.floor((Math.random() * 3) + 1);
+    return (60 + 85 * (randomY - 1));
+}
+
+function randomEnemySpeed() {
+    let randomS = Math.floor((Math.random() * 50) + 1);
+    return (100 + randomS);
 }
 // Now instantiate your objects
 // Place all enemy objects in an array called allEnemies
@@ -59,11 +64,11 @@ function randomEnemyY() {
 
 const player = new Player();
 const allEnemies = [];
-const enemy1 = new Enemy(-100, randomEnemyY(), 100);
+const enemy1 = new Enemy(-100, randomEnemyY(), randomEnemySpeed());
 allEnemies.push(enemy1);
-const enemy2 = new Enemy(-100, randomEnemyY(), 150);
+const enemy2 = new Enemy(-100, randomEnemyY(), randomEnemySpeed());
 allEnemies.push(enemy2);
-const enemy3 = new Enemy(-100, randomEnemyY(), 120);
+const enemy3 = new Enemy(-100, randomEnemyY(), randomEnemySpeed());
 allEnemies.push(enemy3);
 
 // This listens for key presses and sends the keys to your
