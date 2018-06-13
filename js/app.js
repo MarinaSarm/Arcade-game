@@ -48,14 +48,14 @@ Player.prototype.update = function() {
     // y = (this.y + stepY);
 }
 
-//random functions for Enemies: random Y position (3 possibilities) and random speed (between 101 and 150), random start on the screen
+//random functions for Enemies: random Y position (3 possibilities) and random speed (between 101 and 200), random start on the screen
 function randomEnemyY() {
     let randomY = Math.floor((Math.random() * 3) + 1);
     return (60 + 85 * (randomY - 1));
 }
 
 function randomEnemySpeed() {
-    let randomS = Math.floor((Math.random() * 50) + 1);
+    let randomS = Math.floor((Math.random() * 100) + 1);
     return (100 + randomS);
 }
 
