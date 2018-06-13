@@ -47,11 +47,11 @@ Player.prototype.update = function() {
 
 let player = new Player();
 const allEnemies = [];
-const enemy1 = new Enemy(100, 100, 100);
+const enemy1 = new Enemy(0, 60, 100);
 allEnemies.push(enemy1);
-const enemy2 = new Enemy(0, 200, 150);
+const enemy2 = new Enemy(0, 145, 150);
 allEnemies.push(enemy2);
-const enemy3 = new Enemy(0, 300, 120);
+const enemy3 = new Enemy(0, 230, 120);
 allEnemies.push(enemy3);
 
 // This listens for key presses and sends the keys to your
