@@ -48,7 +48,7 @@ Player.prototype.update = function() {
     // y = (this.y + stepY);
 }
 
-//random functions for Enemies: random Y position (3 possibilities) and random speed (between 101 and 150)
+//random functions for Enemies: random Y position (3 possibilities) and random speed (between 101 and 150), random start on the screen
 function randomEnemyY() {
     let randomY = Math.floor((Math.random() * 3) + 1);
     return (60 + 85 * (randomY - 1));
@@ -58,18 +58,29 @@ function randomEnemySpeed() {
     let randomS = Math.floor((Math.random() * 50) + 1);
     return (100 + randomS);
 }
+
+function randomEnemyX() {
+    let randomX = Math.floor((Math.random() * 1000) + 1);
+    return (-randomX);
+}
 // Now instantiate your objects
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
 const player = new Player();
 const allEnemies = [];
-const enemy1 = new Enemy(-100, randomEnemyY(), randomEnemySpeed());
+const enemy1 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
 allEnemies.push(enemy1);
-const enemy2 = new Enemy(-100, randomEnemyY(), randomEnemySpeed());
+const enemy2 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
 allEnemies.push(enemy2);
-const enemy3 = new Enemy(-100, randomEnemyY(), randomEnemySpeed());
+const enemy3 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
 allEnemies.push(enemy3);
+const enemy4 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
+allEnemies.push(enemy4);
+const enemy5 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
+allEnemies.push(enemy5);
+const enemy6 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
+allEnemies.push(enemy6);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
