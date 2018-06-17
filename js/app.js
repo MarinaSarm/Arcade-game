@@ -52,6 +52,7 @@ Player.prototype.update = function() {
     this.y = this.y;
 }
 
+//handle key inputs
 Player.prototype.handleInput = function(move) {
     switch (move) {
       case 'left':
@@ -63,6 +64,7 @@ Player.prototype.handleInput = function(move) {
         if (this.y > 60) {
           this.y = (this.y - 85);
         } else {
+          //check if player reached the water
           this.win = (this.win + 1);
           this.x = 0;
           this.y = 400;
@@ -123,17 +125,17 @@ document.addEventListener('keyup', function(e) {
 
 //modal window for game restart and win or loose message
 function end(message) {
-  document.querySelector('canvas').style.display = 'none';
-  document.querySelector('.message').innerText = message;
-  document.querySelector('.modal').style.display = 'block';
+    document.querySelector('canvas').style.display = 'none';
+    document.querySelector('.message').innerText = message;
+    document.querySelector('.modal').style.display = 'block';
 }
 
 //restart the game if press the button
 function restart() {
-  document.location.reload();
+    document.location.reload();
 }
 
 document.querySelector('.new-game').addEventListener('click', function(event) {
-  event.preventDefault();
-  restart();
+    event.preventDefault();
+    restart();
 });
