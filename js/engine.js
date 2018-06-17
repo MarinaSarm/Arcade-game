@@ -110,7 +110,7 @@ var Engine = (function(global) {
               if (player.collide) {
                 player.collisions += 1;
                 if (player.collisions === 3) {
-                  end("You've lost!");
+                  player.end("You've lost!");
                   player.collisions = 0;
                 }
                 player.collide = false;
@@ -123,7 +123,7 @@ var Engine = (function(global) {
     //check if player reached the water. The player reach the water if it stays near the water and you press the "up" key
     function checkWater() {
       if (player.win === 3) {
-        end("You've win!");
+        player.end("You've win!");
         player.win = 0;
       }
     }

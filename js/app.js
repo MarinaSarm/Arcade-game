@@ -124,7 +124,7 @@ document.addEventListener('keyup', function(e) {
 });
 
 //modal window for game restart and win or loose message
-function end(message) {
+Player.prototype.end = function(message) {
     document.querySelector('canvas').style.display = 'none';
     document.querySelector('.message').innerText = message;
     document.querySelector('.modal').style.display = 'block';
