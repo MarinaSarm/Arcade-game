@@ -37,6 +37,8 @@ var Player = function() {
     this.sprite = 'images/char-pink-girl.png';
     this.x = 0;
     this.y = 400;
+    this.clickable = true;
+    this.collisions = 0;
 }
 
 Player.prototype.render = function() {
@@ -116,6 +118,7 @@ document.addEventListener('keyup', function(e) {
         39: 'right',
         40: 'down'
     };
-
-    player.handleInput(allowedKeys[e.keyCode]);
+    if (player.clickable) {
+      player.handleInput(allowedKeys[e.keyCode]);
+    }
 });
