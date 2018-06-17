@@ -1,6 +1,27 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [Overview](#overview)
+* [Instructions for the game](#instructions)
+* [Contributing](#contributing)
+
+## Overview
+
+This is a simple online Arcade game. The project made for the [Udacity Front-End Web Developer Nanodegree](http://udacity.com/course/front-end-web-developer-nanodegree--nd001).
+
+## Instructions for the game
+
+To win you should reach the water and avoid collisions with bugs. To start the game:
+* Simply press "UP", "DOWN", "LEFT" or "RIGHT" key to move the player.
+* If the player collides with the bug, the player will be moved for the beginning position.
+* If the player reachs the water (it stayes on the nearest square and you press the "UP" key), the player will be moved for the beginning position.
+* Game is lost when the player collides with the bugs 3 times.
+* Game is won when the player reaches the water 3 times.
+
+You can start a new game after the game is over.
+
+## Contributing
+
+This repository is my project made for Udacity. I will not accept pull requests.
