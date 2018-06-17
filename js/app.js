@@ -123,3 +123,20 @@ document.addEventListener('keyup', function(e) {
       player.handleInput(allowedKeys[e.keyCode]);
     }
 });
+
+//modal window for game restart and win or loose message
+function end() {
+  document.querySelector('canvas').style.display = 'none';
+  document.querySelector('.message').innerText = `You've lost!`;
+  document.querySelector('.modal').style.display = 'block';
+}
+
+//restart the game if press the button
+function restart() {
+  document.location.reload();
+}
+
+document.querySelector('.new-game').addEventListener('click', function(event) {
+  event.preventDefault();
+  restart();
+});

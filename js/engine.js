@@ -109,7 +109,7 @@ var Engine = (function(global) {
               if (player.collide) {
                 player.collisions += 1;
                 if (player.collisions === 3) {
-                  alert("You've lost!");
+                  end();
                   player.collisions = 0;
                 }
                 player.collide = false;
@@ -185,6 +185,7 @@ var Engine = (function(global) {
      */
     function reset() {
         // noop
+        // 
     }
 
     /* Go ahead and load all of the images we know we're going to need to
