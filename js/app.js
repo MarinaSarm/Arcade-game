@@ -102,18 +102,10 @@ function randomEnemyX() {
 
 const player = new Player();
 const allEnemies = [];
-const enemy1 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
-allEnemies.push(enemy1);
-const enemy2 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
-allEnemies.push(enemy2);
-const enemy3 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
-allEnemies.push(enemy3);
-const enemy4 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
-allEnemies.push(enemy4);
-const enemy5 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
-allEnemies.push(enemy5);
-const enemy6 = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
-allEnemies.push(enemy6);
+for (let i = 0; i < 6; i++) {
+    const enemy = new Enemy(randomEnemyX(), randomEnemyY(), randomEnemySpeed());
+    allEnemies.push(enemy);
+};
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
