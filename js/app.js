@@ -39,6 +39,7 @@ var Player = function() {
     this.y = 400;
     this.clickable = true;
     this.collisions = 0;
+    this.collide = false;
 }
 
 Player.prototype.render = function() {

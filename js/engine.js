@@ -101,12 +101,21 @@ var Engine = (function(global) {
       allEnemies.forEach(function(enemy) {
           if (enemy.x < player.x + 60 && enemy.x + 80 > player.x && enemy.y == player.y) {
             player.clickable = false;
+            player.collide = true;
             setTimeout(function() {
               player.x = 0;
               player.y = 400;
               player.clickable = true;
+              if (player.collide) {
+                player.collisions += 1;
+                if (player.collisions === 3) {
+                  alert("You've lost!");
+                  player.collisions = 0;
+                }
+                player.collide = false;
+              };
             }, 100);
-          }
+          };
       })
     }
 
