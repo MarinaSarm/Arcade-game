@@ -40,6 +40,7 @@ var Player = function() {
     this.clickable = true;
     this.collisions = 0;
     this.collide = false;
+    this.win = 0;
 }
 
 Player.prototype.render = function() {
@@ -61,7 +62,11 @@ Player.prototype.handleInput = function(move) {
       case 'up':
         if (this.y > 60) {
           this.y = (this.y - 85);
-        };
+        } else {
+          this.win = (this.win + 1);
+          this.x = 0;
+          this.y = 400;
+        }
         break;
       case 'right':
         if (this.x < 404) {
@@ -125,9 +130,9 @@ document.addEventListener('keyup', function(e) {
 });
 
 //modal window for game restart and win or loose message
-function end() {
+function end(message) {
   document.querySelector('canvas').style.display = 'none';
-  document.querySelector('.message').innerText = `You've lost!`;
+  document.querySelector('.message').innerText = message;
   document.querySelector('.modal').style.display = 'block';
 }
 

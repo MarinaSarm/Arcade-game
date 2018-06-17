@@ -80,6 +80,7 @@ var Engine = (function(global) {
     function update(dt) {
         updateEntities(dt);
         checkCollisions();
+        checkWater();
     }
 
     /* This is called by the update function and loops through all of the
@@ -109,7 +110,7 @@ var Engine = (function(global) {
               if (player.collide) {
                 player.collisions += 1;
                 if (player.collisions === 3) {
-                  end();
+                  end("You've lost!");
                   player.collisions = 0;
                 }
                 player.collide = false;
@@ -117,6 +118,14 @@ var Engine = (function(global) {
             }, 100);
           };
       })
+    }
+
+    //check if player reached the water. The player reach the water if it stays near the water and you press the "up" key
+    function checkWater() {
+      if (player.win === 3) {
+        end("You've win!");
+        player.win = 0;
+      }
     }
 
     /* This function initially draws the "game level", it will then call
@@ -185,7 +194,7 @@ var Engine = (function(global) {
      */
     function reset() {
         // noop
-        // 
+        //
     }
 
     /* Go ahead and load all of the images we know we're going to need to
